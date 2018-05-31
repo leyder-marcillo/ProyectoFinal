@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/imagen">
+        <file>CAPUCHO.png</file>
+        <file>enemigo.png</file>
+        <file>intro.jpg</file>
+        <file>loca.jpg</file>
+        <file>bala.png</file>
+        <file>balapruebai.png</file>
+        <file>CAPUCHO2.png</file>
+    </qresource>
+    <qresource prefix="/sounds">
+        <file>bala.mp3</file>
+        <file>fondo.mp3</file>
+    </qresource>
+</RCC>
