@@ -7,6 +7,15 @@
         <file>bala.png</file>
         <file>balapruebai.png</file>
         <file>CAPUCHO2.png</file>
+        <file>movi1.png</file>
+        <file>movi2.png</file>
+        <file>movi3.png</file>
+        <file>movi4.png</file>
+        <file>movi5.png</file>
+        <file>movi6.png</file>
+        <file>movi7.png</file>
+        <file>movi8.png</file>
+        <file>lanzar.png</file>
     </qresource>
     <qresource prefix="/sounds">
         <file>bala.mp3</file>

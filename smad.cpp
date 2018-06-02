@@ -1,7 +1,7 @@
 #include "smad.h"
 #include "game.h"
 #include<stdlib.h>
-
+#include<bullet.h>
 extern game *Game;
 SMAD::SMAD()
 {

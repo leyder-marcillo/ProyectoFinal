@@ -28,7 +28,7 @@ game::game(QWidget *parent)
 
     QTimer *timeSMAD=new QTimer;
     QObject::connect(timeSMAD,SIGNAL(timeout()),capucho,SLOT(spawn()));
-    timeSMAD->start(1400);
+    timeSMAD->start(2000);
 
     //sonido
     QMediaPlayer *musica=new QMediaPlayer();
