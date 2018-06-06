@@ -6,6 +6,7 @@
 #include "smad.h"
 #include <windows.h>
 #include<time.h>
+//#include "papabomba.h"
 
 MyRect::MyRect(QGraphicsItem *parent):QGraphicsPixmapItem(parent)
 {
@@ -70,7 +71,7 @@ void MyRect::keyPressEvent(QKeyEvent *event)
         if(stoper>6)
             stoper=0;
        if(y()>250 )
-        setPos(x(),y()-10);
+        setPos(x(),y()-25 );
     }
     if(event->key()==Qt::Key_Down){
         balafail=0;
@@ -79,38 +80,43 @@ void MyRect::keyPressEvent(QKeyEvent *event)
         if(stoper>6)
             stoper=0;
        if(y()<474)
-       setPos(x(),y()+10);
+       setPos(x(),y()+25);
     }
     if(event->key()==Qt::Key_Space){
-        setPixmap(lanzando[2]);
-        //if(stopp==2){
-        if(balafail==0){
-            setPos(x(),y()-15);
-            balafail=1;
-        }
+        QTimer *mira= new QTimer();
+        for(int i=0;i<3;i++){
+        setPixmap(lanzando[i]);
+
+        if(stopp==2){
+            if(balafail==0){
+                setPos(x(),y()-15);
+                balafail=1;
+            }
+//            PapaBomba *papa=new PapaBomba(170.0,170.0,x()+20,y()+30,200.0,28.0,0.75,0.0099);
+
             Bullet *mibala;
-            mibala=new Bullet();
+            int capo=100;
+            mibala=new Bullet(capo);
             qDebug()<<"Disparando!!!";
-            mibala->setPos(x()+30,y()+20);
+//            mibala->setvalores(170.0,170.0,80.0,90.0,200.0,28.0,0.75,0.0099);
+            mibala->setPos(x()+15,y()+10);
             scene()->addItem(mibala);
             if(soundtiro->state()==QMediaPlayer::PlayingState)
                 soundtiro->setPosition(0);
             if(soundtiro->state()==QMediaPlayer::StoppedState)
-                soundtiro->play();  
-        //}
+                soundtiro->play();
+        }
         stopp++;
         if(stopp>2)
             stopp=0;
+        }
     }
 }
 
-void MyRect::QTest(int ms)
+void MyRect::QTest(int ms) //Dormir el sistema
 {
     if(ms > 0)
         Sleep(ms);
-    struct timespec ts = { ms / 1000, (ms % 1000) * 1000 * 1000 };
-
-    nanosleep(&ts, NULL);
 }
 
 

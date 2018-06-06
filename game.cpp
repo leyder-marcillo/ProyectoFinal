@@ -1,11 +1,15 @@
 #include "game.h"
 #include <QGraphicsTextItem>
 #include <QFont>
-
+#include <QImage>
 game::game(QWidget *parent)
 {
     scene=new QGraphicsScene();
     scene->setSceneRect(0,0,900,600);
+
+    setBackgroundBrush(QBrush(QImage(":/imagen/fondo1C.jpg")));
+//    scene->setBackgroundBrush(Qt::blue);
+
 
     setScene(scene);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -28,7 +32,7 @@ game::game(QWidget *parent)
 
     QTimer *timeSMAD=new QTimer;
     QObject::connect(timeSMAD,SIGNAL(timeout()),capucho,SLOT(spawn()));
-    timeSMAD->start(2000);
+    timeSMAD->start(3000);//Tiempo para nuevo SMAD
 
     //sonido
     QMediaPlayer *musica=new QMediaPlayer();

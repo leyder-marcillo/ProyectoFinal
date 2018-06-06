@@ -18,7 +18,8 @@ public:
     game(QWidget * parent=0);
 
     QGraphicsScene *scene;
-    MyRect *capucho;
+    MyRect * capucho;
+//    MyRect *capucho;
     Score * score;
     Ayudas *help;
 

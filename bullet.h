@@ -18,7 +18,9 @@ class Bullet: public QObject,
     Q_OBJECT
 public:
     Bullet();
+    Bullet(int capucho);
 public slots:
     void move();
+    void dele();
 };
 #endif // BULLET_H
