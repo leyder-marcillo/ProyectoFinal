@@ -8,6 +8,7 @@ public:
     Score(QGraphicsItem *personaje=0);
     void aumenta();
     int getscore();
+    void dismi();
 
 private:
     int score;

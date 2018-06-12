@@ -19,9 +19,18 @@
         <file>fondo1.jpg</file>
         <file>fondo2.jpg</file>
         <file>fondo1C.jpg</file>
+        <file>defenderse.png</file>
+        <file>RIP.png</file>
+        <file>fire1.png</file>
+        <file>fire3.png</file>
+        <file>firesmoke.png</file>
+        <file>fondo4.jpg</file>
     </qresource>
     <qresource prefix="/sounds">
         <file>bala.mp3</file>
         <file>fondo.mp3</file>
+        <file>FondomusicRock.mp3</file>
+        <file>pistolaSmad.mp3</file>
+        <file>papaexplota.mp3</file>
     </qresource>
 </RCC>

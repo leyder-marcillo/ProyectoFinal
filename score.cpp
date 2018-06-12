@@ -5,8 +5,8 @@ Score::Score(QGraphicsItem *personaje):QGraphicsTextItem(personaje)
  score=0;
 
  setPlainText(QString("Puntaje: ")+QString::number(score));
- setDefaultTextColor(Qt::green);
- setFont(QFont("tiempo",16));
+ setDefaultTextColor(Qt::yellow);
+ setFont(QFont("tiempo",20));
 }
 
 void Score::aumenta()
@@ -18,4 +18,9 @@ void Score::aumenta()
 int Score::getscore()
 {
     return score;
+}
+
+void Score::dismi()
+{
+    score-=5;
 }

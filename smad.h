@@ -10,17 +10,22 @@
 #include <QTimer>
 #include <QDebug>
 #include <vector>
+#include <QMediaPlayer>
 using namespace std;
 
 class SMAD: public QObject,
         public QGraphicsPixmapItem{
     Q_OBJECT
     vector <QPixmap > walksmad;
+    QMediaPlayer *disparo;
 public:
     int paso=0;
     SMAD();
+
+    void eliminar();
 public slots:
     void move();
     void fire();
+
 };
 #endif // SMAD_H

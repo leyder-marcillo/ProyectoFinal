@@ -10,7 +10,7 @@ public:
     int getcomodin();
 
 private:
-    int comodin;
+    int vidas;
 
 };
 #endif // AYUDAS_H

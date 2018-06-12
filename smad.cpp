@@ -6,10 +6,9 @@ extern game *Game;
 SMAD::SMAD()
 {
     //random posicion
-    int random_number=250+ rand() % 251;
+    int random_number=350+ rand() % 150;
     setPos(870,random_number);
-    //dibujamos el rect
-//    setRect(0,0,30,100);
+
 
     QPixmap uno=QPixmap(":/imagen/sol4.png");
     QPixmap Dos=QPixmap(":/imagen/sol5.png");
@@ -30,9 +29,11 @@ SMAD::SMAD()
     QTimer *timefire= new QTimer();
     connect(timefire,SIGNAL(timeout()),this,SLOT(fire()));
 
-    mitiempo->start(100);
-    timefire->start(1500);
+    mitiempo->start(100); //caminar
+    timefire->start(2500);//disparar
 }
+
+
 
 void SMAD::move()
 {
@@ -44,18 +45,29 @@ void SMAD::move()
     //moviendo enemigo
     setPos(x()-5,y());
     if(pos().x()<0){
+//        Game->help->disminuye();
+        Game->capucho->vidas--;
+        Game->capucho->vivir();
         Game->help->disminuye();
+        if(Game->score->getscore()>5){
+            Game->score->dismi();
+        }
         scene()->removeItem(this);
         delete this;
-        qDebug() <<"Enemigo borrado";
+//        qDebug() <<"Enemigo borrado";
     }
 }
 
 void SMAD::fire()
 {
+    disparo= new QMediaPlayer();
+    disparo->setMedia(QUrl("qrc:/sounds/pistolaSmad.mp3"));
     Bullet *mibala;
     mibala=new Bullet();
-    qDebug()<<"Disparando!!!";
-    mibala->setPos(x()+15,y()+10);
+//    qDebug()<<"Disparando!!!";
+    mibala->setPos(x()-15,y()+40);
+    if(disparo->state()==QMediaPlayer::StoppedState)
+        disparo->play();
     scene()->addItem(mibala);
 }
+

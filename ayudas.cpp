@@ -2,20 +2,20 @@
 #include <QFont>
 Ayudas::Ayudas(QGraphicsItem *personaje):QGraphicsTextItem(personaje)
 {
- comodin=3;
+ vidas=3;
 
- setPlainText(QString("Comodin: ")+QString::number(comodin));
- setDefaultTextColor(Qt::red);
- setFont(QFont("tiempo",16));
+ setPlainText(QString("Vidas: ")+QString::number(vidas));
+ setDefaultTextColor(Qt::yellow);
+ setFont(QFont("tiempo",20));
 }
 
 void Ayudas::disminuye()
 {
-    comodin--;
-    setPlainText(QString("Comodin: ")+QString::number(comodin));
+    vidas--;
+    setPlainText(QString("Vidas: ")+QString::number(vidas));
 }
 
 int Ayudas::getcomodin()
 {
-    return comodin;
+    return vidas;
 }

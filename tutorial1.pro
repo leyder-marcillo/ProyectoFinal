@@ -31,7 +31,8 @@ SOURCES += \
     smad.cpp \
     score.cpp \
     game.cpp \
-    ayudas.cpp
+    ayudas.cpp \
+    button.cpp
 
 HEADERS += \
     myrect.h \
@@ -39,7 +40,8 @@ HEADERS += \
     smad.h \
     score.h \
     game.h \
-    ayudas.h
+    ayudas.h \
+    button.h
 
 FORMS +=
 
